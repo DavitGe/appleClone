@@ -1,7 +1,9 @@
 import React from 'react';
 
-const DisplaySection = () => {
-  const topHandler = () => {};
+const DisplaySection = ({ triggerPreview }) => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="display-section wrapper">
@@ -10,8 +12,12 @@ const DisplaySection = () => {
       <span className="description">
         Display that's up to 2x brighter in sun.
       </span>
-      <button className="button">Try me!</button>
-      <button className="back-button">TOP</button>
+      <button className="button" onClick={triggerPreview}>
+        Try me!
+      </button>
+      <button className="back-button" onClick={handleScrollToTop}>
+        TOP
+      </button>
     </div>
   );
 };
